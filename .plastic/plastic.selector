@@ -1,0 +1,4 @@
+repository "Tilemania/Tilemania@1375444696971@cloud"
+  path "/"
+    br "/main"
+    co "/main"
