@@ -20,10 +20,18 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null) { Destroy(gameObject); return; }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        musicSource.Play();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(musicSource.gameObject);
+            DontDestroyOnLoad(sfxSource.gameObject);
+            musicSource.Play();
+        } 
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayJump()  => sfxSource.PlayOneShot(jumpSFX);

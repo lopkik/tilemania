@@ -285,7 +285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &186009817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +305,6 @@ MonoBehaviour:
   hitSFX: {fileID: 8300000, guid: 900e30a2a938d4344995584b662e1886, type: 3}
   deathSFX: {fileID: 8300000, guid: 4ea90b2a86f3b4815ab51d78a93cb2f5, type: 3}
   collectSFX: {fileID: 8300000, guid: 5dc96f80d803442089eee46aad7c31a5, type: 3}
-  bgMusic: {fileID: 0}
 --- !u!4 &186009818
 Transform:
   m_ObjectHideFlags: 0
@@ -707,7 +706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &714472878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1112,7 +1111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1425002131
 AudioSource:
   m_ObjectHideFlags: 0
