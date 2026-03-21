@@ -21,6 +21,7 @@ public class PlayerShooter : MonoBehaviour
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
+            AudioManager.Instance.PlayShoot();
         }
     }
 

@@ -62,7 +62,12 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Max(0, currentHealth);
         UpdateHeartUI();
-        CameraShake.Instance?.Shake(2f, 0.3f);
+        AudioManager.Instance.PlayHit();
+        float intensity = 2f;
+        float duration = 0.3f;
+        CameraShake cameraShake = GetComponent<CameraShake>();
+        if (cameraShake != null)
+            cameraShake.Shake(intensity, duration);
 
         if (currentHealth <= 0)
         {

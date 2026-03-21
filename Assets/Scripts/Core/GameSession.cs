@@ -7,7 +7,7 @@ public class GameSession : MonoBehaviour
     public static GameSession Instance { get; private set; }
 
     // ─── State ───────────────────────────────────────────────────────────
-    [SerializeField] int lives = 3;
+    [SerializeField] int lives = 1;
     int score = 0;
 
     void Awake()
@@ -49,16 +49,19 @@ public class GameSession : MonoBehaviour
 
     void LoadGameOver()
     {
+        int GameOverIndex = 4;  // Update if Game Over scene index changes
+        SceneManager.LoadScene(GameOverIndex);
         Destroy(gameObject);  // Reset session
-        SceneManager.LoadScene("GameOver");
     }
 
     public void LoadNextLevel()
     {
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextIndex < SceneManager.sceneCountInBuildSettings)
+        int lastLevelIndex = 3;  // Update if more levels are added
+        int WinIndex = 5;
+        if (nextIndex <= lastLevelIndex)
             SceneManager.LoadScene(nextIndex);
         else
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene(WinIndex);
     }
 }
