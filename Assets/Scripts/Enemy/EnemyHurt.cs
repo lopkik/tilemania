@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class EnemyHurt : MonoBehaviour
 {
-    // [SerializeField] int damageAmount = 1;
+    [SerializeField] int damageAmount = 1;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            // if (playerHealth != null)
-            //     playerHealth.TakeDamage(damageAmount);
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damageAmount);
+                CameraShake.Instance.Shake(2.0f, 0.3f);
+            }
         }
     }
 }

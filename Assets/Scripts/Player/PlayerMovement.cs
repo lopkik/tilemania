@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     // ─── Serialized Fields ──────────────────────────────────────────────
     [Header("Movement")]
     [SerializeField] float moveSpeed = 8f;
-    [SerializeField] float jumpForce = 18f;
+    [SerializeField] float jumpForce = 10f;
 
     [Header("Ground Check")]
     [SerializeField] Transform groundCheck;

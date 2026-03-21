@@ -9,6 +9,7 @@ public class Hazard : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerHealth>()?.TakeDamage(damage);
+            CameraShake.Instance.Shake(0.2f, 0.3f);
         }
     }
 }

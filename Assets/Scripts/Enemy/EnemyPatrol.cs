@@ -52,10 +52,10 @@ public class EnemyPatrol : MonoBehaviour
     void CheckEdges()
     {
         // Turn around at patrol waypoints
-        if (movingRight && transform.position.x >= rightEdge.position.x)
-            TurnAround();
-        else if (!movingRight && transform.position.x <= leftEdge.position.x)
-            TurnAround();
+        // if (movingRight && transform.position.x >= rightEdge.position.x)
+        //     TurnAround();
+        // else if (!movingRight && transform.position.x <= leftEdge.position.x)
+        //     TurnAround();
 
         // Turn around at ledge (no ground detected below)
         bool groundAhead = Physics2D.OverlapCircle(groundDetect.position, detectRadius, groundLayer);
@@ -66,6 +66,7 @@ public class EnemyPatrol : MonoBehaviour
     void TurnAround()
     {
         movingRight = !movingRight;
+        groundDetect.localPosition = new Vector2(-groundDetect.localPosition.x, groundDetect.localPosition.y);
     }
 
     // ─── Death ───────────────────────────────────────────────────────────
