@@ -65,9 +65,7 @@ public class PlayerHealth : MonoBehaviour
         AudioManager.Instance.PlayHit();
         float intensity = 2f;
         float duration = 0.3f;
-        CameraShake cameraShake = GetComponent<CameraShake>();
-        if (cameraShake != null)
-            cameraShake.Shake(intensity, duration);
+        CameraShake.Instance.Shake(intensity, duration);
 
         if (currentHealth <= 0)
         {
